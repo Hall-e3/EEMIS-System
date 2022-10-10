@@ -1,7 +1,6 @@
 {
   "name": "purple-react-free",
   "version": "1.1.0",
-  "homepage": "http://myname.github.io/myapp",
   "proxy": "https://eemis-api.herokuapp.com/eemis",
   "private": true,
   "dependencies": {
