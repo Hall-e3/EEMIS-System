@@ -42,8 +42,8 @@ const initialWorkerData = {
   date_of_birth: "",
   agency: "",
   user: "",
-  returned: false,
-  abroad: false,
+  returned: "",
+  abroad: "",
 };
 
 const userDetials = {

@@ -9,18 +9,19 @@ function BasicElements() {
   const dispatch = useDispatch();
   const [abroad, setAbroad] = React.useState(false);
   const [returned, setReturned] = React.useState(false);
-  console.log({ abroad, returned });
+  const [dob, setDob] = React.useState(new Date());
+  const [contractStart, setContractStart] = React.useState(new Date());
+  const [contractEnd, setContractEnd] = React.useState(new Date());
+
+  const { workerData, handleInputChange, setWorkerData, handleClearForm } =
+    useForm();
+
   const handleAbroad = () => {
     setAbroad(!abroad);
   };
   const handleReturned = () => {
     setReturned(!returned);
   };
-  const { workerData, handleInputChange, setWorkerData, handleClearForm } =
-    useForm();
-  const [dob, setDob] = React.useState(new Date());
-  const [contractStart, setContractStart] = React.useState(new Date());
-  const [contractEnd, setContractEnd] = React.useState(new Date());
 
   React.useEffect(() => {
     dispatch(get());
@@ -31,8 +32,6 @@ function BasicElements() {
   }));
 
   const { workerInfo, update_loading } = { ...worker };
-
-  console.log(workerData);
 
   React.useEffect(() => {
     if (workerInfo) {
@@ -45,8 +44,7 @@ function BasicElements() {
     console.log("am here");
     if (workerInfo?.id) {
       const id = workerInfo?.id;
-      const worker = { ...workerData, returned, abroad };
-      dispatch(update({ id, worker }));
+      dispatch(update({ id, workerData, abroad, returned }));
     }
     handleClearForm();
   };
