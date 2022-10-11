@@ -9,6 +9,7 @@ function BasicElements() {
   const dispatch = useDispatch();
   const [abroad, setAbroad] = React.useState(false);
   const [returned, setReturned] = React.useState(false);
+  console.log({ abroad, returned });
   const handleAbroad = () => {
     setAbroad(!abroad);
   };
@@ -31,7 +32,7 @@ function BasicElements() {
 
   const { workerInfo, update_loading } = { ...worker };
 
-  console.log(workerInfo);
+  console.log(workerData);
 
   React.useEffect(() => {
     if (workerInfo) {
@@ -42,10 +43,9 @@ function BasicElements() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("am here");
-    if (workerInfo.id) {
+    if (workerInfo?.id) {
       const id = workerInfo?.id;
       const worker = { ...workerData, returned, abroad };
-      console.log(worker);
       dispatch(update({ id, worker }));
     }
     handleClearForm();

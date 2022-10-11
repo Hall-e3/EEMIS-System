@@ -86,11 +86,19 @@ function Sidebar() {
             className="nav-link"
             onClick={(evt) => evt.preventDefault()}
           >
-            <div className="nav-profile-image">
-              <img
-                src={require("../../assets/images/faces/face1.jpg")}
-                alt="profile"
-              />
+            <div
+              className="nav-profile-image d-flex align-items-center justify-content-center text-success"
+              style={{
+                backgroundColor: "indigo",
+                borderRadius: "50%",
+              }}
+            >
+              <span
+                className="availability-status online bg-black text-success"
+                style={{ fontSize: "30px", fontWeight: "bold", color: "#fff" }}
+              >
+                {userInfo?.username.charAt(0)}
+              </span>
               <span className="login-status online"></span>
             </div>
             <div className="nav-profile-text">

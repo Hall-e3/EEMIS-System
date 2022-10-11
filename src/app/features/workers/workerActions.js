@@ -21,7 +21,8 @@ export const get = createAsyncThunk(
 
 export const update = createAsyncThunk(
   "worker/update",
-  async ({ id, workerData }, { getState, rejectWithValue, dispatch }) => {
+  async (workerData, { getState, rejectWithValue, dispatch }) => {
+    const { id } = {...workerData};
     console.log(workerData);
     console.log("we have reached here");
     try {
@@ -30,7 +31,8 @@ export const update = createAsyncThunk(
         workerData,
         TokenConfig(getState)
       );
-      return data;
+      // return data;
+      console.log(data);
       // if (data) {
       //   dispatch(
       //     createMessage("Successfully updated the worker", "worker_update")

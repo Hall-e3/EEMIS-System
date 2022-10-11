@@ -62,14 +62,25 @@ function Navbar() {
           <li className="nav-item nav-profile">
             <Dropdown alignRight>
               <Dropdown.Toggle className="nav-link">
-                <div className="nav-profile-img">
-                  {/* <img
-                    src={require("../../assets/images/faces/face1.jpg")}
-                    alt="user"
-                  /> */}
-                  <span className="availability-status online bg-black">
+                <div
+                  className="nav-profile-image d-flex align-items-center justify-content-center text-primary"
+                  style={{
+                    backgroundColor: "indigo",
+                    borderRadius: "50%",
+                    padding: "2px 8px 2px 8px",
+                  }}
+                >
+                  <span
+                    className="availability-status online bg-black"
+                    style={{
+                      fontSize: "30px",
+                      fontWeight: "bold",
+                      color: "#fff",
+                    }}
+                  >
                     {userInfo?.username.charAt(0)}
                   </span>
+                  <span className="login-status online"></span>
                 </div>
                 <div className="nav-profile-text">
                   {userInfo !== null && userInfo !== undefined ? (

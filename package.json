@@ -1,7 +1,6 @@
 {
   "name": "purple-react-free",
   "version": "1.1.0",
-  "proxy": "https://eemis-api.herokuapp.com/eemis",
   "private": true,
   "dependencies": {
     "@mdi/font": "^4.2.95",

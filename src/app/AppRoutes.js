@@ -16,6 +16,7 @@ function AppRoutes() {
       <Switch>
         <AuthenticationRoute exact path="/dashboard" component={Profile} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />
 
         <AuthenticationRoute path="/worker/edit" component={BasicElements} />
