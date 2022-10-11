@@ -191,7 +191,7 @@ function BasicElements() {
                             "Mali",
                             "Booking",
                           ].map((c, i) => (
-                            <option value="Male" key={i}>
+                            <option value={c} key={i}>
                               {c}
                             </option>
                           ))}
